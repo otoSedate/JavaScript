@@ -1,0 +1,39 @@
+﻿<!-урок 2, работа с переменными ->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Это заголовок тайтл</title>
+	<script>
+		var arr1 = [1,2,3]
+		var arr2 = [4,5,6]
+		var res
+		res = arr1.concat(arr2)
+		document.write(res + '<br>')
+		var arr4 = [1,2,3]
+		document.write(arr4.reverse() + '<br>')
+		var arr5 = [1,2,3]
+		arr5.push(4,5,6)
+		document.write(arr5 + '<br>')
+		var arr6 = [1,2,3]
+		arr6.unshift(4,5,6)
+		document.write(arr6 + '<br>')
+		var arr7 = ['js', 'css', 'jq']
+		document.write(arr7.shift() + '<br>')
+		var arr8 = ['js', 'css', 'jq']
+		document.write(arr8.pop() + '<br>')
+		var arr9 = [1, 2, 3, 4, 5]
+		var result = arr9.slice(-2)
+		document.write(result + '<br>')
+		var arr10 = [3, 4, 1, 2, 7]
+		arr10.sort()
+		document.write(arr10 + '<br>')
+		var arr11 = {js: 'test', jq: 'hello', css: 'world'}
+		var result2 = Object.keys(arr11)
+		document.write(result2 + '<br>');
+	</script>
+</head>
+<body>
+	Это основное содержимое страницы.
+</body>
+</html>
