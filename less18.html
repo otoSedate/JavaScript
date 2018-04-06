@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Это заголовок тайтл</title>
+	<script>
+		for (var i = 1, j = 100; i <= 100, j >= 1; i++, j--) {
+			document.write(i + '     ' + j + '<br>')
+		};
+		document.write('<br>');
+		var arr = [];
+		for (var k = 0; k < 10; k++) {
+			arr[k] = 'x';
+		};
+		document.write(arr + '<br>');
+		document.write('<br>');
+		var arr1 = [];
+		for (var i = 0; i < 10; i++) {
+			arr1.push(Math.round(Math.random() * 20) - 10);
+		};
+		document.write(arr1 + '<br>');
+		document.write('<br>');
+		var arr2 = [];
+		var arr2new = [];
+		for (var k = 0; k < 10; k++) {
+			arr2.push(Math.round(Math.random() * 20) - 10);
+			if (arr2[k] > 0 && arr2[k] < 10) {
+				arr2new.push(arr2[k])
+			};
+		};
+		document.write(arr2 + '|||' + arr2new + '<br>');
+		document.write('<br>');
+		
+		var arr3 = [];
+		var sum = 0;
+		for (var k = 0; k < 10; k++) {
+			arr3.push(Math.round(Math.random() * 20) - 10);
+			sum += arr3[k];
+		};
+		document.write(arr3 + '|||' + sum + '<br>');
+		document.write('<br>');
+
+		var arr4 = [];
+		var sum1 = 0;
+		var des = 0;
+		var sred = 0;
+		for (var k = 0; k < 10; k++) {
+			arr4.push(Math.round(Math.random() * 20) - 10);
+			sum1 += arr4[k];
+			des++;
+		};
+		sred = sum1/des;
+		document.write(arr4 + '|||' + 'sred=' + sred + '<br>');
+		document.write('<br>');
+	</script>
+</head>
+<body>
+	Это основное содержимое страницы.
+</body>
+</html>
