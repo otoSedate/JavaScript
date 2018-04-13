@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Это заголовок тайтл</title>
+<script>
+function go(){
+	elem = document.getElementById('test');
+	alert(elem.value);
+}
+function go1(){
+			elem = document.getElementById('test1');
+			elem.value = 'Ой, я поменял свой текст!';
+		}
+function go2(elem){
+	elem.value = 'Ой, я поменял текст!';
+}
+function go3(elem){
+	elem.value = 'О, теперь на меня больше не нажать!';
+	elem.disabled = true;
+}
+function go4(){
+	elem = document.getElementById('test3');
+	elem.style.color = 'red';
+	elem.style.width = '300px';
+}
+function hide(){
+	elem = document.getElementById('test4');
+	elem.style.display = 'none';
+}
+function show(){
+	elem = document.getElementById('test4');
+	elem.style.display = 'inline-block';
+}
+function go10(){
+	var test1 = document.getElementById('test10');
+	var test2 = document.getElementById('test20');
+	var tmp = test10.value;
+	test10.value = test20.value;
+	test20.value = tmp;
+}
+function go20(){
+	var test = document.getElementById('test32');
+	var value = test.value;
+	var result = document.getElementById('result');
+	result.value =  value*value;
+}
+function go45(elem){
+	elem.disabled = true;
+	elem.style.cursor = 'not-allowed';
+}
+</script>
+
+</head>
+<body>
+
+<button onclick="alert('Привет!')">Нажми на меня</button>
+<br>
+<button onmouseover="alert('Привет!')">наведи на меня</button>
+<br>
+<input type="text" value="Ку-ку" id="test">
+<button onclick="go()">Нажми на меня!</button>
+<br>
+<input type="text" value="Ку-ку" id="test1">
+<button onclick="go1()">Нажми на меня!</button>
+<br>
+<input type="text" value="Нажми на меня!" onfocus="go2(this)">
+<br>
+
+<p>
+		Это input type="submit".
+	</p>
+	<input type="submit" onclick="go(this)" value="Нажми на меня!">
+<br>
+<p>
+		Это input type="submit".
+	</p>
+	<input type="submit" onclick="go3(this)" value="Нажми на меня!">
+<br>
+<input type="text" value="Ку-ку" id="test3">
+<button onclick="go4()">Нажми на меня!</button>
+<br>
+<input type="text" value="Ку-ку" id="test4">
+<button onclick="hide()">Нажми на меня!</button>
+<button onclick="show()">Нажми потом на меня!</button>
+<br>
+<input type="text" value="Привет!" id="test10">
+<input type="text" value="Пока!" id="test20">
+<button onclick="go10()">Нажми на меня!</button>
+<br>
+<p>
+		По нажатию на кнопку в нижнем инпуте появится квадрат числа из верхнего инпута.
+</p>
+<input type="text" value="" placeholder="Введите число!" id="test32">
+<input id = "result" value = "Здесь появится результат." disabled>
+<button onclick="go20()">Нажми на меня!</button>
+<br>
+<p>
+		Обратите внимание на курсор в различных состояниях.
+</p>
+<input type="submit" onclick="go45(this)" value="Нажми на меня!">
+<br>
+</body>
+</html>
