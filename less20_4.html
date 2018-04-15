@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function go(elem) {
+		var text = document.getElementById('text');
+		text.innerHTML = elem.value;
+	}
+</script>
+</head>
+<body>
+	<input type="text" value="" placeholder="Введи в меня текст!" id="test"
+		onkeyup="go(this)">
+	<span id="text"></span>
+</body>
+</html>

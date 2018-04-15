@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function func() {
+	var elems = document.querySelectorAll('p.www');
+	for (var i = 0; i < elems.length; i++) {
+		elems[i].innerHTML = i;
+	}
+}
+</script>
+</head>
+<body>
+	<h2 class="www">Заголовок с классом www, не поменяется.</h2>
+	<p class="www">Абзац с классом www.</p>
+	<p class="www">Абзац с классом www.</p>
+	<p class="www">Абзац с классом www.</p>
+	<p>Просто абзац, не поменяется.</p>
+	<input type="submit" value="Нажмите на меня!" onclick="func()">
+	<br>
+</body>
+</html>

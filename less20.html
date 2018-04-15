@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function go() {
+		var test = document.getElementById('test');
+		test.innerHTML = 'Ку-ку! А я <b>жирный</b>!';
+	}
+
+	function go1() {
+		var test = document.getElementById('test1');
+		test.outerHTML = '<h3>Абзац превратился в h3!</h3>';
+	}
+	
+	function go2() {
+		var input1 = +document.getElementById('input1').value;
+		var input2 = +document.getElementById('input2').value;
+		var result = document.getElementById('result');
+		result.innerHTML = input1 + input2;
+	}
+</script>
+</head>
+<body>
+	<p id="test">При нажатии на кнопку текст в абзаце поменяется.</p>
+	<input type="submit" value="Нажмите на меня!" onclick="go()">
+	<p id="test1">При нажатии на кнопку текст в абзаце поменяется.</p>
+	<input type="submit" value="Нажмите на меня!" onclick="go1()">
+	<br>
+	<input type="text" value="" id="input1"> +
+	<input type="text" value="" id="input2"> =
+	<span id="result">?</span>
+	<br>
+	<br>
+	<button onclick="go2()">Нажмите чтобы сложить</button>
+	<br>
+	
+</body>
+</html>
