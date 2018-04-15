@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function go() {
+		window.timerId = window.setInterval(timer, 500);
+		document.getElementById('go').disabled = true;
+		document.getElementById('stop').disabled = false;
+	}
+	function stop() {
+		window.clearInterval(window.timerId);
+		document.getElementById('go').disabled = false;
+		document.getElementById('stop').disabled = true;
+	}
+	function timer() {
+		var test = document.getElementById('test');
+		test.innerHTML = parseInt(test.innerHTML) + 1;
+	}
+</script>
+</head>
+<body>
+	<div id="wrapper">
+		<p id="test">0</p>
+		<input type="submit" value="Запустить таймер!" onclick="go()" id="go">
+		<input type="submit" value="Остановить таймер!" onclick="stop()"
+			id="stop" disabled>
+	</div>
+</body>
+</html>
