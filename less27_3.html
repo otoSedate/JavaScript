@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function go(event) {
+		document.getElementById('show').innerHTML = String.fromCharCode(event.which);
+	}
+</script>
+</head>
+<body>
+	<input onkeypress="go(event);" placeholder="Введите текст">
+	<br><br>
+	<div>Нажатая клавиша: <span id="show">?</span></div>
+</body>
+</html>
