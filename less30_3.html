@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var p = document.getElementById('text');
+	window.setInterval(func, 1000);
+
+	function func() {
+		if (p.style.color == 'red') {
+			p.style.color = 'green';
+		} else {
+			p.style.color = 'red';
+		}
+	};
+
+	var inp = document.querySelector('input');
+	var btn = document.querySelector('button');
+	btn.addEventListener('click', func1);
+
+	function func1() {
+		var str = '';
+		var symbols = '0123456789qwertyuiopasdfghjklzxcvbnm';
+		for (var i = 0; i < 8; i++) {
+			str += symbols.charAt(Math.floor(Math.random() * symbols.length));
+			inp.value = str;
+		}
+	};
+
+	var inp = document.getElementById('result');
+
+	function start() {
+		window.setInterval(timer, 100);
+	}
+
+	function timer() {
+		inp.value = inp.value * inp.value;
+	}
+</script>
+</head>
+<body onload="start()">
+	<p id="text">Javascript</p>
+	<button onclick="func()">hjhgjg</button>
+
+	<input type="text">
+	<button onclick="func1()">jhhj</button>
+	
+	<input type="text" value="2" id="result">
+</body>
+</html>

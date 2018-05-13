@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var inp = document.querySelector('input');
+	document.documentElement.addEventListener('mouseup', func);
+
+	function func() {
+		var inp = document.querySelector('input');
+		document.documentElement.addEventListener('mouseup', func);
+		var content = window.getSelection().toString();
+		inp.value = content;
+	}
+</script>
+</head>
+<body>
+	<input type="text">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</body>
+</html>

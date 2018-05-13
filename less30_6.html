@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function func() {
+		var elem = document.getElementById('num');
+		var btnElem = document.getElementsByClassName('cls');
+		for (var i = 0; i < elem.length; i++) {
+			btnElem[i].addEventListener('click', func);
+		}
+		var number = +elem.value + +this.value;
+		if (number >= 0) {
+			elem.value = number;
+		} else {
+			elem.value = 0;
+		}
+	}
+	var elem = document.getElementById('num');
+	var btnElem = document.getElementsByClassName('cls');
+	for (var i = 0; i < elem.length; i++) {
+		btnElem[i].addEventListener('click', func);
+	}
+
+	var elem = document.getElementsById('tr');
+	for (var i = 0; i < elem.length; i++) {
+		elem[i].addEventListener('click', func1);
+	}
+
+	function func1() {
+		var elem = document.getElementsById('tr');
+		for (var i = 0; i < elem.length; i++) {
+			elem[i].addEventListener('click', func1);
+		}
+		this.innerHTML = this.innerHTML * this.innerHTML;
+	}
+</script>
+</head>
+<body>
+	<input id="num" type="text" value="0">
+	<input class="cls" type="submit" value="1">
+	<input class="cls" type="submit" value="-1">
+	<p id="tr">2</p>
+	<p id="tr">3</p>
+	<p id="tr">6</p>
+</body>
+</html>

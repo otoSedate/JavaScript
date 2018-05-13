@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var p = document.getElementById('text');
+	window.setInterval(func, 1000);
+	var arr = [ 'red', 'green', 'blue' ];
+	var i = 0;
+
+	function func() {
+		var p = document.getElementById('text');
+		
+		p.style.color = arr[i];
+		i++;
+		if (i >= arr.length) {
+			i = 0;
+		}
+	}
+</script>
+</head>
+<body>
+	<p id="text">Javascript</p>
+</body>
+</html>

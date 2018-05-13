@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var elem = document.getElementById('test');
+	var input = document.getElementById('text');
+	function func() {
+		if (!elem.checked) {
+			input.style.display = "none";
+		} else {
+			input.style.display = "inline";
+		}
+	};
+
+	function func() {
+		var elem = document.getElementsByTagName('input');
+		for (var i = 0; i < elem.length; i++) {
+			elem[i].checked = true;
+		}
+	};
+
+	function func1() {
+		var elem = document.getElementById('text1');
+		if (elem.checked) {
+			elem.checked = false;
+		} else {
+			elem.checked = true;
+		}
+	};
+	
+</script>
+</head>
+<body>
+
+	<input id="test" type="checkbox" checked="" onchange="func()">
+	<input id="text" type="text" value="">
+<br>
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	<button onclick="func()">rtu</button>
+<br>
+	<input id="text1" type="checkbox" checked="">
+	<a href='#' onclick="func1()">ссылка</a>
+
+</body>
+</html>

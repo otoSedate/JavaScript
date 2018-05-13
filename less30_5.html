@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var inp = document.querySelector('input');
+	inp.addEventListener('blur', func);
+
+	function func() {
+		var inp = document.querySelector('input');
+		inp.addEventListener('blur', func);
+		var content = inp.value;
+		if (content > 0 && content < 101) {
+			inp.style.background = 'green';
+		} else {
+			inp.style.background = 'red';
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text">
+</body>
+</html>
