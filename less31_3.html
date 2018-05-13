@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+			margin: 0 auto;
+		}
+		td, th {
+			border: 1px solid #000;
+			padding: 10px;
+		}
+		th:after {
+			padding-left: 5px;
+		}
+		th.darr:after {
+			content: '\2193';
+		}
+		th.uarr:after {
+			content: '\2191';
+		}
+		thead {
+			background: #eee;
+			cursor: pointer;
+		} 
+	</style>
+</head>
+<body>	
+	<table id="tableSort">
+		<thead>
+			<tr>
+				<th>№</th>
+				<th>Фамилия</th>
+				<th>Имя</th>
+				<th>Возраст</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>2</td>
+				<td>Петров</td>
+				<td>Петр</td>
+				<td>24</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>Иванов</td>
+				<td>Иван</td>
+				<td>32</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Абрамов</td>
+				<td>Абрам</td>
+				<td>34</td>
+			</tr>
+		<tbody>
+	</table>
+	<script>
+		var table = document.getElementById('tableSort');
+		var sortType = 1; //1 - по возрастанию, 0 - по убыванию
+		var classArrays = {
+			0: 'uarr',
+			1: 'darr',
+		}
+		sortByTh(table.getElementsByTagName('th')[0]);
+		table.addEventListener('click', sortStart);
+		function sortStart(event) {
+			var targ = event.target;
+			var check = event.tagName
+			if (targ.tagName !== 'TH') return;
+			sortByTh(targ);
+		}
+		function sortByTh(th) {
+			var rows = getArray(table.tBodies[0].rows);
+			var index = th.cellIndex;
+			sortRows(rows, index);
+			sortType = -sortType + 1; 
+			addArrow(th);
+			printSort(rows);
+		}
+		function addArrow(th) {
+			var allTh = table.querySelectorAll('th');
+			for (var i = 0; i < allTh.length; i++) {
+			   allTh[i].classList.remove(classArrays[0]);
+			   allTh[i].classList.remove(classArrays[1]);
+			}
+			th.classList.add(classArrays[sortType]);
+		}
+		function sortRows(rows, index) {
+			rows.sort(sort);
+			function sort(a, b) {
+				var val_a = a.children[index].innerHTML;
+				var val_b = b.children[index].innerHTML;
+				if (parseFloat(val_a)) {
+					val_a = parseFloat(val_a);
+					val_b = parseFloat(val_b);
+				}
+				if (sortType) {
+					return val_a > val_b;
+				} else {
+					return val_b > val_a;
+				}
+			}
+		}
+		function printSort(rows) {
+			var tbody = table.tBodies[0];
+			tbody.innerHTML = '';
+			for (var i = 0; i < rows.length; i++) {
+				tbody.appendChild(rows[i]);
+			}
+		}
+		function getArray(collection) {
+			var arr = [];
+			for (var i = 0; i < collection.length; i++) {
+				arr.push(collection[i]);
+			}
+			return arr;
+		}
+	</script>
+</body>
+</html>

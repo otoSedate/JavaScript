@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<body>	
+	<ul id="test">
+		<li class="question">
+			JavaScript это тоже самое что и Java?
+			<ul>
+				<li><label><input type="radio" name="question1" data-true>Нет.</label></li>
+				<li><label><input type="radio" name="question1">Да.</label></li>
+				<li><label><input type="radio" name="question1">Когда как</label></li>
+			</ul>
+		</li>
+		<li class="question">
+			Сколько параментров можно передавать в фукнцию?
+			<ul>
+				<li><label><input type="radio" name="question2">Только столько, сколько указано при ее созданиию</label></li>
+				<li><label><input type="radio" name="question2">Минимум 1.</label></li>
+				<li><label><input type="radio" name="question2" data-true>Сколько угодно.</label></li>
+			</ul>
+		</li>
+		<li class="question">
+			Что такое: "use strict"?
+			<ul>
+				<li><label><input type="radio" name="question3">Просто строка</label></li>
+				<li><label><input type="radio" name="question3">Фукцния</label></li>
+				<li><label><input type="radio" name="question3" data-true>Строгий режим</label></li>
+			</ul>
+		</li>
+	</ul>
+	<input type="button" id="check" value="Проверить">	
+	<script>
+		var checkEl = document.getElementById('check');
+		var questionsEl = document.getElementsByClassName('question');
+		var result = [];
+		checkEl.addEventListener('click', checkAnswers);
+		function checkAnswers() {
+			for (var i = 0; i < questionsEl.length; i++) {
+				var answers = questionsEl[i].querySelectorAll('input[type=radio]');
+				result.push( checkOneAnswer(answers) );
+			}
+			printResult();
+			result = [];
+		}
+		function checkOneAnswer(answers) {
+			var result = null;
+			var noAnswer = true;
+			for (var i = 0; i < answers.length; i++) {
+				var isTrue = (answers[i].getAttribute('data-true') !== null);
+				if (answers[i].checked) {
+					noAnswer = false;
+					if (isTrue) {
+						result = true;
+					} else {
+						result = false;
+					}
+				} else {
+					if (isTrue) {
+						result = false;
+					}
+				}
+			}
+			if (noAnswer) {
+				result = null;
+			}
+			return result;
+		}
+		function printResult() {
+			var trueAnswers = 0;
+			var falseAnswers = 0;
+			var noAnswers = 0;
+			for (var i = 0; i < result.length; i++) {
+				if (result[i] === true) {
+					trueAnswers++;
+				} else if (result[i] === false) {
+					falseAnswers++;
+				} else if (result[i] === null) {
+					noAnswers++;
+				}
+			}
+			var all = trueAnswers + falseAnswers + noAnswers;
+			var percent = Math.round((trueAnswers/all) * 100);
+			var msg = 'Правильных ответов: ' + trueAnswers + ' (' + percent + '%)\n'
+				+ 'Неправильных ответов: ' + falseAnswers + '\n'
+				+ 'Без ответов: ' + noAnswers + '\n';
+			alert(msg);
+		}
+	</script>
+</body>
+</html>
