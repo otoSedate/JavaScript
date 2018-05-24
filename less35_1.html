@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+let newArr = ['первый', 'второй', 'третий', 'четвертый', 'пятый', 'шестой', 'седьмой'];
+let [elem1, elem2, ...arr] = newArr;
+document.write(elem1 + '| '+ elem2 + '|' +arr);
+
+let newArr2 = ['первый', 'второй', 'третий', 'четвертый', 'пятый', 'шестой', 'седьмой'];
+let [, elem2] = newArr2;
+document.write(elem2);
+
+let user = {
+		name: 'Пётр',
+		surname: 'Петров',
+		age: '20 лет'
+	};
+
+let{name, surname, age} = user;
+document.write(name + ' ' + surname + ' ' + age);
+	
+
+let newArr3 = ['первый', 'второй'];
+let [, elem2 = 'bbb', elem3 = 'eee'] = newArr3;
+document.write(elem2);
+</script>
+</head>
+<body>
+
+</body>
+</html>

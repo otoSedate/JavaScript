@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+let arr = ['elem1', 'elem2', 'elem3'];
+for (let curr of arr){
+	alert(curr);
+}
+
+let arr2 = [1, 2, 3, 4, 5];
+var sum2 = 0;
+for (let curr of arr2){
+	sum += curr;
+}
+alert(sum);
+
+function func(a = 'Аноним') {
+	alert('Привет, '+ a );
+}
+
+let name = 'Юзернейм';
+func();
+
+let str = 'Дана строка. С помощью for-of подсчитайте количество букв о в ней. ';
+let i = 0;
+for (let symb of str) {
+	if (symb == 'о') {i++};
+}
+alert(i);
+</script>
+</head>
+<body>
+
+</body>
+</html>
