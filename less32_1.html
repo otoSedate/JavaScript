@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var a;
+	if (a > 0) {
+		var ggg = function() {
+			console.log('!');
+		}
+	} else {
+		var ggg = function() {
+			console.log('!!');
+		}
+	}
+
+	var ggg1 = function(n, f) {
+		return f(n);
+	}
+	funcNew = function(a) {
+		return Math.pow(a, 2)
+	};
+	num = 7;
+	alert(ggg1((ggg1(num, funcNew)), funcNew));
+
+	var each = function(startArr, f) {
+		return f(startArr)
+	};
+	var arr = [ 64, 49, 36, 25, 16 ];
+	var myFunc = function(a) {
+		var newArr = [];
+		for (var i = 0; i < a.length; i++) {
+			newArr[i] = Math.sqrt(a[i]);
+		}
+		return newArr;
+	}
+	document.write(each(arr, myFunc));
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var colors = [ 'magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue' ];
+	var p_collect = document.getElementsByTagName('p');
+
+	var f1 = function() {
+		var k = 0;
+		return function() {
+			this.style.color = colors[k];
+			k++;
+			if (k == colors.length) {
+				k = 0
+			}
+			;
+		}
+	}
+
+	for (var i = 0; i < p_collect.length; i++) {
+		p_collect[i].addEventListener('click', f1());
+	}
+
+	function counter() {
+		var i = 1;
+		return function() {
+			return i++
+		};
+	}
+
+	var func = counter();
+
+	alert(func());
+	alert(func());
+	alert(func());
+
+	var f1 = function() {
+		var already_used = [];
+		return function() {
+			var new_num = Math.floor(Math.random() * 100 + 1);
+			for (var i = 0; i < already_used.length; i++) {
+				if (already_used[i] == new_num) {
+					return
+				}
+			}
+			;
+
+			parag.innerHTML += new_num + ', ';
+			already_used.push(new_num);
+		}
+	}
+
+	var but = document.querySelector('button').addEventListener('click', f1());
+	var parag = document.querySelector('p');
+</script>
+</head>
+<body>
+	<p>Текст1</p>
+	<p>Текст2</p>
+	<p>Текст3</p>
+
+	<button>Жми</button>
+	<p></p>
+</body>
+</html>
