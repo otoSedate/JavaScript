@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<p>
+		<b></b>
+	</p>
+	<script>
+		$('p[class]').each(function() {
+			$elem = $(this);
+			var classes = $elem.attr('class');
+			var $div = $('<div>').addClass(classes);
+			$elem.removeAttr('class').wrap($div);
+		});
+		$(':not(div.www) > p').unwrap().wrap('<div class="zzz">');
+		$('p').parent().not('div').children('p').wrap('<div class="www">');
+	</script>
+</body>
+</html>

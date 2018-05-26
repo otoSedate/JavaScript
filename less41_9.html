@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<p>
+		<b></b>
+	</p>
+	<ul>
+		<li>345</li>
+		<li>dftg54</li>
+		<li>5435j</li>
+	</ul>
+	<script>
+		var $elems = $('li');
+		$elems.detach(':odd');
+		$elems.empty(':even');
+
+		$('li').slice(0, 10).css('color', 'red');
+	</script>
+</body>
+</html>

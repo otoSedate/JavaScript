@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<p>
+		<b></b>
+	</p>
+	<script>
+		var $id = $('#test');
+		var $next = $id.nextAll().eq(1);
+		var $prev = $id.prevAll().eq(1);
+		var nextText = $next.html();
+		var prevText = $prev.html();
+		$next.html(prevText);
+		$prev.html(nextText);
+	</script>
+</body>
+</html>

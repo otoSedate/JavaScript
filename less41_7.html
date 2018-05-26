@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<p>
+		<b></b>
+	</p>
+	<p>123</p>
+	<p>756</p>
+	<p>45654</p>
+	<script>
+		$('p').on('click', function() {
+			$(this).prev().remove().end().next().remove();
+		});
+	</script>
+</body>
+</html>
