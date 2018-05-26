@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Insert tittle here</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="/js/jquery/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#fadeIn').click(
+				function(){
+					$('#block').fadeIn(500);
+					return false;
+				}
+			)
+			$('#fadeOut').click(
+				function(){
+					$('#block').fadeOut(500);
+					return false;
+				}
+			)
+			$('#fadeToDown').click(
+				function(){
+					$('#block').fadeTo(500, 0.5);
+					return false;
+				}
+			)
+			$('#fadeToUp').click(
+				function(){
+					$('#block').fadeTo(500, 1);
+					return false;
+				}
+			)
+		});
+	</script>
+</head>
+<body>
+	<p>
+		<a id="fadeOut" href="">исчезнуть</a>
+		<a id="fadeIn" href="">появится</a>
+		<a id="fadeToDown" href="">затемнить</a>
+		<a id="fadeToUp" href="">оттемнить</a>
+	</p>
+	<div id="block">
+		<ol>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+		</ol>
+	</div>
+</body>
+</html>

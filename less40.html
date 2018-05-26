@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Insert tittle here</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="/js/jquery/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#link').click(
+				function(){
+					$('#block').slideToggle(500, function(){
+							if($('#link').html() == 'свернуть'){
+								$('#link').html('развернуть');
+							}
+							else $('#link').html('свернуть');
+						}
+					)
+					return false;
+				}
+			)
+		});
+	</script>
+</head>
+<body>
+	<p>
+		<a id="link" href="">свернуть</a>
+	</p>
+	<div id="block">
+		<ol>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+			<li>пункт списка</li>
+		</ol>
+	</div>
+</body>
+</html>
