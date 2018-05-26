@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="styles.css">
+<script src="/js/jquery/jquery.min.js"></script>
+<script src="/js/jquery/jquery-ui.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('#block1').click(function() {
+			$(this).effect('slide', {
+				mode : 'hide',
+				direction : 'down'
+			}, 1000);
+			return false;
+		})
+	});
+</script>
+<style>
+a {
+	color: orange;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+ol {
+	margin: 0;
+	padding-left: 10px;
+}
+
+li {
+	list-style-type: inside;
+}
+
+div {
+	display: inline-block;
+	padding: 30px;
+	cursor: pointer;
+	background: #FF8000;
+	color: white;
+}
+
+h2 {
+	margin-top: 0px;
+}
+
+body {
+	text-align: center;
+	padding: 50px 0;
+	overflow: hidden;
+}
+</style>
+</head>
+<body>
+	<div id="block1">
+		<h2>1. Нажми на меня</h2>
+		<ol>
+			<li>пункт</li>
+			<li>пункт</li>
+			<li>пункт</li>
+			<li>пункт</li>
+			<li>пункт</li>
+			<li>пункт</li>
+			<li>пункт</li>
+		</ol>
+	</div>
+</body>
+</html>
